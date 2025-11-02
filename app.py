@@ -10,7 +10,7 @@ app = FastAPI(
 
 class EmailData(BaseModel):
     subject: str = Field(..., example="Important Meeting Tomorrow")
-@app.get("/predict")
+@app.post("/predict")
 def predict(getData: EmailData):
     
     model01C = joblib.load( 'models/modelRandomForest.pkl') # Carga del modelo.
